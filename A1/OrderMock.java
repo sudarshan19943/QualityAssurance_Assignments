@@ -1,3 +1,0 @@
-OrderMock implements Iorder{
-	
-}

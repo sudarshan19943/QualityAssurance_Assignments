@@ -1,5 +1,6 @@
-public class Mexico
+public class Mexico implements ICountryGDPReport
 {
+	
 	public String getAgriculture()
 	{
 		return "$50000000 MXN";
@@ -8,5 +9,12 @@ public class Mexico
 	public String getTourism()
 	{
 		return "$100000 MXN";
+	}
+
+	@Override
+	public void calculateEconomy() {
+		System.out.println("- Mexico:\n");
+		System.out.println("   - Agriculture: " + getAgriculture());
+		System.out.println("   - Tourism: " + getTourism());
 	}
 }

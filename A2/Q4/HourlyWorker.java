@@ -1,4 +1,4 @@
-public class HourlyWorker
+public class HourlyWorker implements IWageCalculator
 {
 	private float hourlyRate;
 

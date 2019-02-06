@@ -1,13 +1,5 @@
-import java.time.Duration;
-import java.util.ArrayList;
-
-public class Book implements ILibraryItem
+public class Book implements INonDigitalLibraryItem
 {
-	public Duration getPlayTime()
-	{
-		return Duration.ZERO;
-	}
-
 	public String getAuthor()
 	{
 		return "Hemingway";
@@ -18,13 +10,4 @@ public class Book implements ILibraryItem
 		return "For Whom The Bell Tolls";
 	}
 
-	public boolean isDigitalOnly()
-	{
-		return false;
-	}
-
-	public ArrayList<String> getCastList()
-	{
-		return null;
-	}
 }

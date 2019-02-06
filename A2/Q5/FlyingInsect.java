@@ -1,10 +1,5 @@
-public class FlyingInsect implements IInsect
+public class FlyingInsect implements IFlyingInsect, IMovingAntennaeInsect
 {
-	public void swim()
-	{
-		// I can't swim I fly!
-	}
-
 	public void fly()
 	{
 		System.out.println("Flap flap!");

@@ -67,7 +67,6 @@ public class Simulation
 			// TODO: Notify your Observer pattern subject here that 1 minute has passed.
 			timersubject.notifySubjects();
 			minutesToCompleteSimulation += 1;
-			System.out.println("minutesToCompleteSimulation: " +minutesToCompleteSimulation);
 			// Check all robots to see whether they are finished.
 			robotsStillWorking = false;
 			ListIterator<Object> iter = robots.listIterator();

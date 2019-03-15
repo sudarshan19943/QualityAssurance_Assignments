@@ -33,12 +33,12 @@ public class BatteryPack extends BatteryPackDecoratorAbstract{
 	@Override
 	public void drain(int minutes) {
 		//Drain first the battery pack and then drain regular battery
-		if (packCharge != 0) 
+		while (packCharge != 0) 
 		{
-			packCharge -= minutes;
-			packCharge = Math.max(packCharge, 0);
-		} 
-		else 
+			packCharge --;
+			minutes --;
+		}
+		if(batteryToDecorate.hasEnoughPowerForMinutes(minutes)) 
 		{
 			batteryToDecorate.drain(minutes);
 		}

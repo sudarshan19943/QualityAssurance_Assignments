@@ -39,9 +39,6 @@ public class Simulation
 	{
 		this.factory = factory;
 		shelf.setItemCount(args.getShelfCount());
-
-		// TODO: Complete this method to use the factory to build all of the
-		//       objects needed for the simulation.
 		timersubject = factory.makeTimerSubject();
 		for (int i = 0 ; i < args.getNumBatteryPacks(); i++)
 		{
@@ -64,7 +61,6 @@ public class Simulation
 		boolean robotsStillWorking = true;
 		while (robotsStillWorking)
 		{
-			// TODO: Notify your Observer pattern subject here that 1 minute has passed.
 			timersubject.notifySubjects();
 			minutesToCompleteSimulation += 1;
 			// Check all robots to see whether they are finished.

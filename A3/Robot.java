@@ -22,7 +22,6 @@ public class Robot implements IRobot, ITimerObserver
 			}
 			else
 			{
-				// TODO: You must implement your recharge state transition logic here.
 				state = Simulation.instance().getFactory().makeRechargeState(battery, transitionState);
 			}
 		}

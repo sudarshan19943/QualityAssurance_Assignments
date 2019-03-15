@@ -2,13 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
-import java.awt.event.*;
-
-import javax.swing.Timer;
-
 public class TimerSubject {
 	private List<IRobot> observers;
 	private static TimerSubject timerInstance = null;
+	private int MINUTES = 1;
 
 	public TimerSubject() 
 	{
@@ -39,7 +36,7 @@ public class TimerSubject {
 		ListIterator<IRobot> iter = observers.listIterator();
 		while (iter.hasNext())
 		{
-			((Robot) iter.next()).timeElapsed(1);
+			((Robot) iter.next()).timeElapsed(MINUTES);
 		}
 
 	}

@@ -10,17 +10,9 @@ public class TimerSubject {
 	private List<IRobot> observers;
 	private static TimerSubject timerInstance = null;
 
-	public TimerSubject() {
+	public TimerSubject() 
+	{
 		observers = new ArrayList<IRobot>();
-		int delay = 1000; //milliseconds
-		ActionListener taskPerformer = new ActionListener()
-		{
-			public void actionPerformed(ActionEvent evt)
-			{
-				notifySubjects();
-			}
-		};
-		new Timer(delay, taskPerformer).start();
 	}
 
 	public static TimerSubject instance()

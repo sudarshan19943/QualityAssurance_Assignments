@@ -1,17 +1,19 @@
 import java.util.HashMap;
 
 public class Help {
-    HashMap<String, ICommand> cmds = new HashMap<>();
+    HashMap<String, Command> commands = new HashMap<>();
 
     public Help() {
-	cmds.put("print", new Print());
-	cmds.put("open", new Open());
-	cmds.put("close", new Close());
+
+	commands.put("print", new Print());
+	commands.put("open", new Open());
+	commands.put("close", new Close());
     }
 
     public String getHelp(String command) {
+
 	if (command != null && command.length() != 0) {
-	    return cmds.get(command).GetHelp();
+	    return commands.get(command).getHelp();
 	}
 	return ListAllCommands();
     }

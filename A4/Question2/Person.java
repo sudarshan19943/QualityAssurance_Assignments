@@ -4,9 +4,8 @@ public class Person
 
 	private String areaCode;
 	private String phoneNumber;
-
-	private String userName;
-	private String password;
+	
+	private AuthenticateUser authenitcatedUser = new AuthenticateUser();
 
 	public Person(String name)
 	{
@@ -36,11 +35,10 @@ public class Person
 
 	public void setLoginCredentials(String userName, String password)
 	{
-		this.userName = userName;
-		this.password = password;
+		authenitcatedUser.setLoginCredentials(userName, password);
 	}
 	public boolean authenticateUser()
 	{
-		return (userName.equals("joe") && password.equals("joepass"));
+		return authenitcatedUser.authenticateUser();
 	}
 }

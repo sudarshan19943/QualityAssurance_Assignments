@@ -1,30 +1,22 @@
-public class Help
-{
-	public String getHelp(String command)
-	{
-		if (command != null && command.length() != 0)
-		{
-			switch (command)
-			{
-				case "print":
-				{
-					return "print -f <path> [-colour=0/1] [-two-sided=0/1]";
-				}
-				case "open":
-				{
-					return "open -f <path> [-create=0/1]";
-				}
-				case "close":
-				{
-					return "close -f <path>";
-				}
-			}
-		}
-		return listAllCommands();
-	}
+import java.util.HashMap;
 
-	public String listAllCommands()
-	{
-		return "Commands: print, open, close";
+public class Help {
+    HashMap<String, ICommand> cmds = new HashMap<>();
+
+    public Help() {
+	cmds.put("print", new Print());
+	cmds.put("open", new Open());
+	cmds.put("close", new Close());
+    }
+
+    public String getHelp(String command) {
+	if (command != null && command.length() != 0) {
+	    return cmds.get(command).GetHelp();
 	}
+	return ListAllCommands();
+    }
+
+    public String ListAllCommands() {
+	return "Commands: print, open, close";
+    }
 }
